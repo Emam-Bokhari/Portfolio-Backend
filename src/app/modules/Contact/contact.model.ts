@@ -1,37 +1,40 @@
 import { model, Schema } from 'mongoose';
 import { TContact } from './contact.interface';
-import { excludeDeletedAggregation, excludeDeletedQuery } from '../../../utils/moduleSpecific/queryFilter';
+import {
+  excludeDeletedAggregation,
+  excludeDeletedQuery,
+} from '../../../utils/moduleSpecific/queryFilter';
 
 const contactSchema = new Schema<TContact>(
-    {
-        name: {
-            type: String,
-            trim: true,
-            required: true,
-        },
-        email: {
-            type: String,
-            trim: true,
-            required: true,
-        },
-        phone: {
-            type: String,
-            trim: true,
-        },
-        message: {
-            type: String,
-            trim: true,
-            required: true,
-        },
-        isDeleted: {
-            type: Boolean,
-            default: false,
-        },
+  {
+    name: {
+      type: String,
+      trim: true,
+      required: true,
     },
-    {
-        timestamps: true,
-        versionKey: false,
+    email: {
+      type: String,
+      trim: true,
+      required: true,
     },
+    phone: {
+      type: String,
+      trim: true,
+    },
+    message: {
+      type: String,
+      trim: true,
+      required: true,
+    },
+    isDeleted: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  {
+    timestamps: true,
+    versionKey: false,
+  },
 );
 
 // query middleware for soft delete by utils
