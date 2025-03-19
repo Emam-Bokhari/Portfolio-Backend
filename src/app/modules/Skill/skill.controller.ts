@@ -60,7 +60,7 @@ const deleteSkillController = asyncHandler(async (req, res) => {
     });
 });
 
-export const BlogControllers = {
+export const SkillControllers = {
     createSkillController,
     getAllSkillsController,
     getSkillController,

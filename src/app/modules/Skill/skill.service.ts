@@ -28,10 +28,11 @@ const getSkillById = async (id: string) => {
 
 const updateSkillById = async (id: string, payload: Partial<TSkill>) => {
     const updatedSkill = await Skill.findOneAndUpdate(
-        { _id: id, isDeleted: false },
+        { _id: id },
         payload,
         { new: true, runValidators: true },
     );
+
 
     if (!updatedSkill) {
         throw new HttpError(404, 'The requested skill could not be found.');
