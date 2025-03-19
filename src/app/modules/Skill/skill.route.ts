@@ -9,10 +9,10 @@ import { SkillValidationSchema } from './skill.validation';
 const router = express.Router();
 
 router.post(
-    '/',
-    auth(),
-    validateRequestSchema(SkillValidationSchema.createSkillValidationSchema),
-    SkillControllers.createSkillController,
+  '/',
+  auth(),
+  validateRequestSchema(SkillValidationSchema.createSkillValidationSchema),
+  SkillControllers.createSkillController,
 );
 
 router.get('/', SkillControllers.getAllSkillsController);
@@ -20,10 +20,10 @@ router.get('/', SkillControllers.getAllSkillsController);
 router.get('/:id', SkillControllers.getSkillController);
 
 router.patch(
-    '/:id',
-    auth(),
-    validateRequestSchema(SkillValidationSchema.updateSkillValidationSchema),
-    SkillControllers.updateSkillController,
+  '/:id',
+  auth(),
+  validateRequestSchema(SkillValidationSchema.updateSkillValidationSchema),
+  SkillControllers.updateSkillController,
 );
 
 router.delete('/:id', auth(), SkillControllers.deleteSkillController);
