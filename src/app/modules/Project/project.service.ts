@@ -16,7 +16,7 @@ const getAllProjects = async () => {
 };
 
 const getFeaturedProject = async () => {
-  const featuredProject = await Project.findOne({ isFeatured: true });
+  const featuredProject = await Project.find({ isFeatured: true });
   if (!featuredProject) {
     throw new HttpError(
       404,

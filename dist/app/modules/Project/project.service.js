@@ -24,7 +24,7 @@ const getAllProjects = () => __awaiter(void 0, void 0, void 0, function* () {
     return projects;
 });
 const getFeaturedProject = () => __awaiter(void 0, void 0, void 0, function* () {
-    const featuredProject = yield project_model_1.Project.findOne({ isFeatured: true });
+    const featuredProject = yield project_model_1.Project.find({ isFeatured: true });
     if (!featuredProject) {
         throw new HttpError_1.HttpError(404, 'Featured projects were not found in the database.');
     }
