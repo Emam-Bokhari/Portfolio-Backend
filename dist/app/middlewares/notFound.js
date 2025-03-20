@@ -1,11 +1,11 @@
-import express, { Request, Response } from 'express';
-const notFound = ((req: Request, res: Response) => {
+'use strict';
+Object.defineProperty(exports, '__esModule', { value: true });
+const notFound = (req, res) => {
   return res.status(404).json({
     success: false,
     message: 'Route Not Found',
     statusCode: 404,
     error: `The request endpoint ${req.originalUrl} does not exists.`,
   });
-}) as unknown as express.ErrorRequestHandler;
-
-export default notFound;
+};
+exports.default = notFound;

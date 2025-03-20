@@ -1,6 +1,9 @@
 import { model, Schema } from 'mongoose';
 import { TSkill } from './skill.interface';
-import { excludeDeletedAggregation, excludeDeletedQuery } from '../../../utils/moduleSpecific/queryFilter';
+import {
+  excludeDeletedAggregation,
+  excludeDeletedQuery,
+} from '../../../utils/moduleSpecific/queryFilter';
 
 const skillSchema = new Schema<TSkill>(
   {
@@ -23,7 +26,7 @@ const skillSchema = new Schema<TSkill>(
     isDeleted: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   {
     timestamps: true,
