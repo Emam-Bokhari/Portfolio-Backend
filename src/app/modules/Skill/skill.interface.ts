@@ -3,4 +3,5 @@ export type TSkill = {
   name: string;
   description: string;
   category: 'frontend' | 'backend' | 'softSkills' | 'others';
+  isDeleted?: boolean;
 };

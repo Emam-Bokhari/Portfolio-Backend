@@ -1,5 +1,6 @@
 import { model, Schema } from 'mongoose';
 import { TSkill } from './skill.interface';
+import { excludeDeletedAggregation, excludeDeletedQuery } from '../../../utils/moduleSpecific/queryFilter';
 
 const skillSchema = new Schema<TSkill>(
   {
@@ -19,11 +20,22 @@ const skillSchema = new Schema<TSkill>(
       type: String,
       required: true,
     },
+    isDeleted: {
+      type: Boolean,
+      default: false,
+    }
   },
   {
     timestamps: true,
     versionKey: false,
   },
 );
+
+// query middleware for soft delete by utils
+skillSchema.pre('find', excludeDeletedQuery);
+skillSchema.pre('findOne', excludeDeletedQuery);
+
+// aggregate middleware for soft delete by utils
+skillSchema.pre('aggregate', excludeDeletedAggregation);
 
 export const Skill = model<TSkill>('Skill', skillSchema);
