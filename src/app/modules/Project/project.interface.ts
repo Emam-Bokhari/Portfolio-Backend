@@ -8,7 +8,7 @@ export type TProject = {
   solution?: string;
   keyFeatures: string[];
   liveLink: string;
-  frontendSourceCode: string;
+  frontendSourceCode?: string;
   backendSourceCode?: string;
   apiDocumentation?: string;
   projectGoals?: string;
