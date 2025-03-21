@@ -22,7 +22,7 @@ const createProjectValidationSchema = z.object({
       // .min(5, 'Each key feature must be at least 5 characters long'),
     ),
     liveLink: z.string(),
-    frontendSourceCode: z.string(),
+    frontendSourceCode: z.string().optional(),
     backendSourceCode: z.string().optional(),
     apiDocumentation: z.string().optional(),
     projectGoals: z.string().optional(),
