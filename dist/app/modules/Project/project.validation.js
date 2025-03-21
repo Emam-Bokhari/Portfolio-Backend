@@ -18,7 +18,7 @@ const createProjectValidationSchema = zod_1.z.object({
         solution: zod_1.z.string().optional(),
         keyFeatures: zod_1.z.array(zod_1.z.string()),
         liveLink: zod_1.z.string(),
-        frontendSourceCode: zod_1.z.string(),
+        frontendSourceCode: zod_1.z.string().optional(),
         backendSourceCode: zod_1.z.string().optional(),
         apiDocumentation: zod_1.z.string().optional(),
         projectGoals: zod_1.z.string().optional(),

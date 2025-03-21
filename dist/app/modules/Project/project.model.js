@@ -48,7 +48,6 @@ const projectSchema = new mongoose_1.Schema({
     frontendSourceCode: {
         type: String,
         trim: true,
-        required: true,
     },
     backendSourceCode: {
         type: String,
